@@ -32,6 +32,7 @@ Node.js
 ## To improve
 - Add end2end tests
 - Improve design
+- Improve code coverage to 100%
 
 ## Available Commands
 
