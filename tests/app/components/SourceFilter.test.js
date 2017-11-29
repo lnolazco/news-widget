@@ -1,32 +1,41 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import SourceFilter from '../../../app/components/SourceFilter';
+jest.mock('../../../app/services/news-service', () => ({
+  getSources: () => {
+    return new Promise((resolve) => {
+      resolve([
+        {
+          title: 'title1',
+        },
+        {
+          title: 'title2',
+        },
+      ]);
+    });
+  },
+}));
 
 describe('SourceFilter', () => {
   let sourceFilter;
+  const spy = jest.fn();
 
   beforeEach(() => {
-    sourceFilter = shallow(<SourceFilter />);
+    sourceFilter = mount(<SourceFilter onSelect={spy} />);
   });
 
   test('should exists', () => {
     expect(sourceFilter).toBeTruthy();
   });
 
-  test('should call service to get sources', () => {
-    expect(false).toBe(true);
-  });
-
   test('should store sources in the state', () => {
-    expect(false).toBe(true);
+    expect(sourceFilter.instance().state.sources).toHaveLength(2);
   });
 
-  test('should add same number of options than the sources received from service', () => {
-    expect(false).toBe(true);
-  });
-
-  test('should call prop onSelect when an option is selected', () => {
-    expect(false).toBe(true);
-  });
+  // test('should call prop onSelect when an option is selected', () => {
+  //   const option = sourceFilter.find('option').at(2);
+  //   option.simulate('click');
+  //   expect(spy).toHaveBeenCalled();
+  // });
 });

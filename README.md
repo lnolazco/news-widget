@@ -30,9 +30,12 @@ Node.js
 - Open [http://localhost:8080](http://localhost:8080)
 
 ## To improve
+- Complete the unit tests
 - Add end2end tests
 - Improve design
 - Improve code coverage to 100%
+- Implement Show More
+- Show only 5 news per time.
 
 ## Available Commands
 

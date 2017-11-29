@@ -15,14 +15,14 @@ describe('Article', () => {
   });
 
   test('should add title', () => {
-    expect(false).toBe(true);
+    expect(article.find('.article__title')).toHaveLength(1);
   });
 
   test('should add published date', () => {
-    expect(false).toBe(true);
+    expect(article.find('.article__date')).toHaveLength(1);
   });
 
   test('should add source name', () => {
-    expect(false).toBe(true);
+    expect(article.find('.article__source')).toHaveLength(1);
   });
 });
